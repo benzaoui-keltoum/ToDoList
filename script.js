@@ -1,13 +1,4 @@
-
-
-        
-    
-        
-        // Read the code for modifie the delete icon
-      
-
-
-        let p=0;
+   let p=0;
 
 function aff(event){
 
@@ -20,8 +11,10 @@ function aff(event){
 
    // Creating a new div element
 var newDiv = document.createElement('div');
+
         // Create an "input" node:
         // and style to it
+
     const node = document.createElement("input");
     node.style.width='59%';
     node.style.padding='20px';
@@ -31,36 +24,39 @@ var newDiv = document.createElement('div');
     node.style.boxSizing='border-box';
     node.style.border='1px';
     node.value=empt;
+
    // add type and name <input type="text" id="snote" name="sndnote" placeholder="Your second note..">
     node.type="text";
     node.name="frfrgt";
     node.placeholder="You note here";
+    
 
     // Add delte icon
 var dele = document.createElement('i');
 dele.className='glyphicon glyphicon-trash';
-dele.id="i"+p;
-console.log(dele.id)
-p++;
+
 
 //add icone and  input to div
-    newDiv.appendChild(node);	
-    newDiv.appendChild(dele);	
-    event.preventDefault();
+newDiv.appendChild(node);	
+newDiv.appendChild(dele);	
 
 //add div to form
-    document.getElementById("fo").appendChild(newDiv);
+document.getElementById("fo").appendChild(newDiv);
+
+dele.onclick=()=>{
+
+    //delete div elemnt  from the parent elemnt "form "
+    var f=document.getElementById("fo");
+    f.removeChild(newDiv);
 
 
+}
     }
-  
-}
 
-function delet(i){
-
-    i.parentElement.remove();
-
+    event.preventDefault();
 }
 
 
-document.addEventListener=('click',delet(this));
+
+
+
